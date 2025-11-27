@@ -518,13 +518,72 @@ header nav .form i:hover {
 .portfolio .shuffle li {
     display: inline-block;
     padding: 10px;
-    font-size: 18px;
-    margin-bottom: 60px;
+    font-weight: normal;
+
 }
 
 .portfolio .shuffle .active {
     background-color: #19c8fa;
     color: white;
+}
+
+.portfolio .imgs-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+    .portfolio .imgs-container .box {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 1199px) {
+    .portfolio .imgs-container .box {
+        flex-basis: 25%;
+    }
+}
+
+.portfolio .imgs-container .box img {
+    max-width: 100%;
+    transition: 0.3s;
+}
+
+.portfolio .imgs-container .box {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio .imgs-container .box .caption {
+    left: 0;
+    text-align: start;
+    padding: 20px;
+    position: absolute;
+    bottom: -100%;
+    background-color: white;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.portfolio .imgs-container .box:hover .caption {
+    bottom: 0;
+}
+
+.portfolio .imgs-container .box:hover img {
+    transform: rotate(3deg) scale(1.1);
+}
+
+.portfolio .imgs-container .box .caption h4 {
+    font-weight: normal;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.portfolio .imgs-container .box .caption p {
+    font-weight: normal;
+    font-size: 13px;
+    color: var(--main-color);
 }
 
 /*End Portfolio*/
